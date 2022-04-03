@@ -9,6 +9,11 @@
         <item name="android:textSize">28sp</item>
         <item name="android:layout_height">80dp</item>
     </style>
+    <style name="SplashTime" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/ic_calcurator</item>
+        <item name ="backgroundColor">@color/white</item> </style>
+
+
 
     <style name="Gray.Button" parent="Base.Button">
         <item name="backgroundTint">@color/gray</item>

@@ -2,8 +2,10 @@ package com.geektech.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -12,13 +14,14 @@ public class MainActivity extends AppCompatActivity {
     private Integer first, second;
     private Boolean isOperationClick;
     private String oriation;
-
+    private Button nextbotton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         tvResult = findViewById(R.id.tv_result);
-
+nextbotton = findViewById(R.id.btn_next);
+nextbotton.setVisibility(View.GONE);
     }
 
     public void onNumberClick(View view) {
@@ -133,7 +136,18 @@ public class MainActivity extends AppCompatActivity {
                 second = Integer.parseInt(tvResult.getText().toString());
                 Integer result = 0;
 
-                isOperationClick = true;
+                if(isOperationClick = true){
+                   nextbotton.setVisibility(View.VISIBLE);
+                }
+                nextbotton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                        intent.putExtra("Key", tvResult.getText().toString());
+                        startActivity(intent);
+                        finishActivity(123);
+                    }
+                });
                 switch (oriation){
                     case "+":
                 result  = first + second;

@@ -24,6 +24,17 @@
             android:layout_marginHorizontal="36dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+     <com.google.android.material.button.MaterialButton
+         android:layout_width="200dp"
+         android:layout_height="70dp"
+         android:layout_marginStart="100dp"
+         android:backgroundTint="@color/orange"
+         app:cornerRadius="16dp"
+         android:text="Next"
+         android:textSize="16dp"
+         android:id="@+id/btn_next"
+         />
+
 
     </FrameLayout>
 
